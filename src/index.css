@@ -76,3 +76,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Estilización de scrollbar para el overlay */
+.group-hover\:opacity-100::-webkit-scrollbar {
+  width: 4px;
+}
+
+.group-hover\:opacity-100::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.group-hover\:opacity-100::-webkit-scrollbar-thumb {
+  background: #ffffff50;
+  border-radius: 2px;
+}
+
+.group-hover\:opacity-100::-webkit-scrollbar-thumb:hover {
+  background: #ffffff80;
+}

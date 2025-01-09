@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
-import { Star, ShoppingCart } from 'lucide-react';
+import { Star, ShoppingCart, Info } from 'lucide-react';
 
 // Importar imágenes SVG
 import freshTrack from '../assets/fresh-track.svg';
@@ -24,6 +24,7 @@ const KitchenProducts = () => {
       rating: 4.7,
       stock: 30,
       description: "Contenedor inteligente de alimentos",
+      longDescription: "Sistema innovador que monitorea la frescura de tus alimentos en tiempo real. Incluye sensores de temperatura y humedad, notificaciones móviles y estimación de vida útil de los alimentos. Perfecto para reducir el desperdicio y mantener tus alimentos frescos por más tiempo.",
       features: ["Sensor", "Alertas", "Smart"],
       image: freshTrack
     },
@@ -35,6 +36,7 @@ const KitchenProducts = () => {
       rating: 4.8,
       stock: 25,
       description: "Organizador modular magnético",
+      longDescription: "Sistema de organización revolucionario con módulos magnéticos intercambiables. Adapta el espacio según tus necesidades, incluye etiquetas inteligentes y es compatible con cualquier superficie metálica. La solución perfecta para mantener tu cocina ordenada y aprovechada al máximo.",
       features: ["Modular", "Imanes", "Apilable"],
       image: spaceMax
     },
@@ -46,6 +48,7 @@ const KitchenProducts = () => {
       rating: 4.6,
       stock: 40,
       description: "Sellador de bolsas automático",
+      longDescription: "Sellador portátil recargable por USB que cierra cualquier tipo de bolsa en segundos. Con tecnología de sellado térmico que garantiza un cierre hermético. Incluye cortador integrado y es perfecto para mantener los alimentos frescos y organizados.",
       features: ["Rápido", "Portátil", "USB"],
       image: quickSeal
     },
@@ -57,6 +60,7 @@ const KitchenProducts = () => {
       rating: 4.9,
       stock: 20,
       description: "Cortador 5 en 1 ajustable",
+      longDescription: "Herramienta multifuncional con 5 cuchillas intercambiables para diferentes tipos de corte. Sistema de ajuste de grosor patentado y mecanismo de seguridad avanzado. Incluye recipiente recolector y es apto para lavavajillas.",
       features: ["5 en 1", "Ajustable", "Seguro"],
       image: multiCut
     },
@@ -68,6 +72,7 @@ const KitchenProducts = () => {
       rating: 4.5,
       stock: 25,
       description: "Limpiador ecológico multisuperficie",
+      longDescription: "Limpiador concentrado biodegradable que se activa con agua. Formula patentada que elimina el 99.9% de bacterias sin químicos agresivos. Cada botella concentrada equivale a 5 botellas de limpiador tradicional, reduciendo significativamente el uso de plástico.",
       features: ["Eco", "Natural", "Efectivo"],
       image: ecoClean
     },
@@ -79,6 +84,7 @@ const KitchenProducts = () => {
       rating: 4.7,
       stock: 15,
       description: "Limpiador a vapor portátil",
+      longDescription: "Limpiador a vapor compacto con tecnología de alta presión. Desinfecta y limpia sin químicos, usando solo agua. Incluye 6 accesorios diferentes para todas las superficies de la cocina y se calienta en solo 30 segundos.",
       features: ["Vapor", "Portátil", "Potente"],
       image: steamPro
     }
@@ -118,12 +124,16 @@ const KitchenProducts = () => {
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-3">
         {filteredProducts.map(product => (
           <Card key={product.id} className="flex flex-col">
-            <CardHeader className="p-0">
+            <CardHeader className="p-0 relative group">
               <img 
                 src={product.image} 
                 alt={product.name}
                 className="w-full aspect-square object-contain p-2 bg-gray-50 rounded-t-lg"
               />
+              {/* Overlay con descripción */}
+              <div className="absolute inset-0 bg-black/70 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overflow-y-auto rounded-t-lg">
+                <p className="text-xs leading-tight">{product.longDescription}</p>
+              </div>
             </CardHeader>
             <CardContent className="flex-1 p-1">
               <div className="flex justify-between items-start mb-1">
