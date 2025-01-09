@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
-import Home from './components/pages/Home'
 import Products from './components/pages/Products'
 import About from './components/pages/About'
 import Contact from './components/pages/Contact'
@@ -29,7 +28,9 @@ function App() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar setCurrentPage={setCurrentPage} />
-      {renderContent()}
+      <main className="pt-10">
+        {renderContent()}
+      </main>
     </div>
   )
 }
