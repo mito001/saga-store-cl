@@ -1,14 +1,14 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { UtensilsCrossed, Sofa, BedDouble, Crown, Shower } from 'lucide-react';
+import { ChefHat, Armchair, Bed, Gem, Bath } from 'lucide-react';
 
 const CategoryNavigation = ({ setCurrentCategory }) => {
   const categories = [
-    { id: 'kitchen', name: 'Cocina', icon: UtensilsCrossed },
-    { id: 'living', name: 'Living', icon: Sofa },
-    { id: 'bedroom', name: 'Dormitorios', icon: BedDouble },
-    { id: 'master', name: 'King & Queen', icon: Crown },
-    { id: 'bathroom', name: 'Baños', icon: Shower }
+    { id: 'kitchen', name: 'Cocina', icon: ChefHat },
+    { id: 'living', name: 'Living', icon: Armchair },
+    { id: 'bedroom', name: 'Dormitorios', icon: Bed },
+    { id: 'master', name: 'King & Queen', icon: Gem },
+    { id: 'bathroom', name: 'Baños', icon: Bath }
   ];
 
   return (
