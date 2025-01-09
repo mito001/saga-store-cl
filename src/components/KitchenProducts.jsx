@@ -4,6 +4,14 @@ import { Badge } from './ui/badge';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Star, ShoppingCart } from 'lucide-react';
 
+// Importar imágenes SVG
+import freshTrack from '../assets/fresh-track.svg';
+import spaceMax from '../assets/space-max.svg';
+import quickSeal from '../assets/quick-seal.svg';
+import multiCut from '../assets/multi-cut.svg';
+import ecoClean from '../assets/eco-clean.svg';
+import steamPro from '../assets/steam-pro.svg';
+
 const KitchenProducts = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   
@@ -17,7 +25,7 @@ const KitchenProducts = () => {
       stock: 30,
       description: "Contenedor inteligente de alimentos",
       features: ["Sensor", "Alertas", "Smart"],
-      image: "/api/placeholder/100/100"
+      image: freshTrack
     },
     {
       id: 2,
@@ -28,7 +36,7 @@ const KitchenProducts = () => {
       stock: 25,
       description: "Organizador modular magnético",
       features: ["Modular", "Imanes", "Apilable"],
-      image: "/api/placeholder/100/100"
+      image: spaceMax
     },
     {
       id: 3,
@@ -39,7 +47,7 @@ const KitchenProducts = () => {
       stock: 40,
       description: "Sellador de bolsas automático",
       features: ["Rápido", "Portátil", "USB"],
-      image: "/api/placeholder/100/100"
+      image: quickSeal
     },
     {
       id: 4,
@@ -50,7 +58,7 @@ const KitchenProducts = () => {
       stock: 20,
       description: "Cortador 5 en 1 ajustable",
       features: ["5 en 1", "Ajustable", "Seguro"],
-      image: "/api/placeholder/100/100"
+      image: multiCut
     },
     {
       id: 5,
@@ -61,7 +69,7 @@ const KitchenProducts = () => {
       stock: 25,
       description: "Limpiador ecológico multisuperficie",
       features: ["Eco", "Natural", "Efectivo"],
-      image: "/api/placeholder/100/100"
+      image: ecoClean
     },
     {
       id: 6,
@@ -72,7 +80,7 @@ const KitchenProducts = () => {
       stock: 15,
       description: "Limpiador a vapor portátil",
       features: ["Vapor", "Portátil", "Potente"],
-      image: "/api/placeholder/100/100"
+      image: steamPro
     }
   ];
 
@@ -114,7 +122,7 @@ const KitchenProducts = () => {
               <img 
                 src={product.image} 
                 alt={product.name}
-                className="w-full aspect-square object-cover rounded-t-lg"
+                className="w-full aspect-square object-contain p-2 bg-gray-50 rounded-t-lg"
               />
             </CardHeader>
             <CardContent className="flex-1 p-1">
