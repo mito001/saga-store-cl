@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from './components/Navbar'
+import HeroSection from './components/HeroSection'
 import Home from './components/pages/Home'
 import Products from './components/pages/Products'
 import About from './components/pages/About'
@@ -8,10 +9,12 @@ import Contact from './components/pages/Contact'
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
 
-  const renderPage = () => {
+  const renderContent = () => {
+    if (currentPage === 'home') {
+      return <HeroSection setCurrentPage={setCurrentPage} />
+    }
+
     switch(currentPage) {
-      case 'home':
-        return <Home setCurrentPage={setCurrentPage} />
       case 'products':
         return <Products />
       case 'about':
@@ -19,14 +22,14 @@ function App() {
       case 'contact':
         return <Contact />
       default:
-        return <Home setCurrentPage={setCurrentPage} />
+        return null
     }
   }
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar setCurrentPage={setCurrentPage} />
-      {renderPage()}
+      {renderContent()}
     </div>
   )
 }
