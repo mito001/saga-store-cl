@@ -1,4 +1,3 @@
-
 import Link from 'next/link'
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
 
@@ -17,12 +16,12 @@ export default function ProductItem({ product }) {
               {product.name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p" className="mb-2">
-              {product.description?.slice(0, 80)}...  
+              {product.description?.slice(0, 80)}...
             </Typography>
             <Typography variant="h6" color="primary">
               ${product.price}
             </Typography>
-          </CardContent>  
+          </CardContent>
         </CardActionArea>
       </Link>
     </Card>
