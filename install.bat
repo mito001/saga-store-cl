@@ -1,1 +1,8 @@
-{"encoding": "base64", "content": "QGVjaG8gb2ZmCmVjaG8g8J+agCBJbmljaWFuZG8gc2V0dXAuLi4KY2FsbCBucG0gaW5zdGFsbCByZWFjdCByZWFjdC1kb20gQHJhZGl4LXVpL3JlYWN0LXNsb3QgY2xhc3MtdmFyaWFuY2UtYXV0aG9yaXR5IGNsc3ggbHVjaWRlLXJlYWN0IHRhaWx3aW5kLW1lcmdlIHRhaWx3aW5kY3NzLWFuaW1hdGUKY2FsbCBucG0gaW5zdGFsbCAtRCBAdHlwZXMvbm9kZSBAdHlwZXMvcmVhY3QgQHR5cGVzL3JlYWN0LWRvbSBAdml0ZWpzL3BsdWdpbi1yZWFjdCBhdXRvcHJlZml4ZXIgZXNsaW50IGVzbGludC1wbHVnaW4tcmVhY3QgZXNsaW50LXBsdWdpbi1yZWFjdC1ob29rcyBlc2xpbnQtcGx1Z2luLXJlYWN0LXJlZnJlc2ggcG9zdGNzcyB0YWlsd2luZGNzcyB2aXRlCmNhbGwgbnB4IHRhaWx3aW5kY3NzIGluaXQgLXAKY2FsbCBucHggc2hhZGNuLXVpQGxhdGVzdCBpbml0CmNhbGwgbnB4IHNoYWRjbi11aUBsYXRlc3QgYWRkIGJ1dHRvbiBjYXJkIGJhZGdlCmVjaG8g4pyFIFNldHVwIGNvbXBsZXRhZG8h"}
+@echo off
+echo 🚀 Iniciando setup...
+call npm install react react-dom @radix-ui/react-slot class-variance-authority clsx lucide-react tailwind-merge tailwindcss-animate
+call npm install -D @types/node @types/react @types/react-dom @vitejs/plugin-react autoprefixer eslint eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh postcss tailwindcss vite
+call npx tailwindcss init -p
+call npx shadcn-ui@latest init
+call npx shadcn-ui@latest add button card badge
+echo ✅ Setup completado!
