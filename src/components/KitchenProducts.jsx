@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Star, ShoppingCart, Info } from 'lucide-react';
+import { Button } from './ui/button';
+import { Badge } from './ui/badge';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
+import { Star, ShoppingCart } from 'lucide-react';
 
 const KitchenProducts = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -72,39 +72,6 @@ const KitchenProducts = () => {
       stock: 15,
       description: "Limpiador a vapor portátil",
       features: ["Vapor", "Portátil", "Potente"],
-      image: "/api/placeholder/100/100"
-    },
-    {
-      id: 7,
-      name: "VacuumFresh",
-      category: "storage",
-      price: 24.99,
-      rating: 4.4,
-      stock: 35,
-      description: "Set de bolsas al vacío reusables",
-      features: ["Reusable", "Vacío", "Ahorro"],
-      image: "/api/placeholder/100/100"
-    },
-    {
-      id: 8,
-      name: "ChopMaster",
-      category: "lifehacks",
-      price: 15.99,
-      rating: 4.8,
-      stock: 50,
-      description: "Tabla de corte 3 en 1 plegable",
-      features: ["Plegable", "3 en 1", "Compacto"],
-      image: "/api/placeholder/100/100"
-    },
-    {
-      id: 9,
-      name: "SprayClean",
-      category: "cleaning",
-      price: 27.99,
-      rating: 4.6,
-      stock: 28,
-      description: "Atomizador con medidor inteligente",
-      features: ["Medidor", "Preciso", "Eco"],
       image: "/api/placeholder/100/100"
     }
   ];
