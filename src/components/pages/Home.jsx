@@ -2,16 +2,19 @@ import React from 'react';
 import { Button } from '../ui/button';
 import { ArrowRight } from 'lucide-react';
 
-const Home = () => {
+const Home = ({ setCurrentPage }) => {
   return (
     <div className="container mx-auto p-4">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h1 className="text-4xl font-bold mb-4">Bienvenido a Saga Store</h1>
         <p className="text-lg text-gray-600 mb-6">
-          Descubre productos innovadores que transformarán tu experiencia en la cocina.
-          Soluciones inteligentes para un hogar moderno.
+          Descubre productos innovadores que transformarán tu experiencia en el hogar.
+          Soluciones inteligentes para una vida moderna.
         </p>
-        <Button className="text-lg">
+        <Button 
+          className="text-lg"
+          onClick={() => setCurrentPage('products')}
+        >
           Explorar Productos
           <ArrowRight className="ml-2" />
         </Button>
