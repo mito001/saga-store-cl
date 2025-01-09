@@ -2,10 +2,9 @@ import React from 'react';
 import { Button } from './ui/button';
 import { PhoneCall, Home, Info, Mail, ShoppingCart, Menu } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({ setCurrentPage }) => {
   return (
     <nav className="bg-white shadow-sm border-b">
-      {/* Top bar con información de contacto */}
       <div className="bg-gray-50 py-1">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm text-gray-600">
           <div className="flex items-center space-x-4">
@@ -18,38 +17,31 @@ const Navbar = () => {
               <span>info@sagastore.com</span>
             </a>
           </div>
-          <div className="flex items-center space-x-4">
-            <a href="#" className="hover:text-primary">Mi Cuenta</a>
-            <a href="#" className="hover:text-primary">Seguimiento</a>
-          </div>
         </div>
       </div>
 
-      {/* Main navbar */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-primary">SAGA STORE</h1>
+            <h1 onClick={() => setCurrentPage('home')} className="text-2xl font-bold text-primary cursor-pointer">SAGA STORE</h1>
           </div>
 
-          {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#" className="flex items-center text-gray-600 hover:text-primary">
+            <button onClick={() => setCurrentPage('home')} className="flex items-center text-gray-600 hover:text-primary">
               <Home className="w-4 h-4 mr-1" />
               Inicio
-            </a>
-            <a href="#" className="text-gray-600 hover:text-primary">Categorías</a>
-            <a href="#" className="text-gray-600 hover:text-primary">Productos</a>
-            <a href="#" className="flex items-center text-gray-600 hover:text-primary">
-              <Info className="w-4 h-4 mr-1" />
+            </button>
+            <button onClick={() => setCurrentPage('products')} className="text-gray-600 hover:text-primary">
+              Productos
+            </button>
+            <button onClick={() => setCurrentPage('about')} className="text-gray-600 hover:text-primary">
               Nosotros
-            </a>
-            <a href="#" className="text-gray-600 hover:text-primary">Blog</a>
-            <a href="#" className="text-gray-600 hover:text-primary">Contacto</a>
+            </button>
+            <button onClick={() => setCurrentPage('contact')} className="text-gray-600 hover:text-primary">
+              Contacto
+            </button>
           </div>
 
-          {/* Cart and Menu buttons */}
           <div className="flex items-center space-x-4">
             <Button variant="outline" size="icon" className="relative">
               <ShoppingCart className="w-4 h-4" />
