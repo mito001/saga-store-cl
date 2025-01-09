@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from './components/Navbar'
-import KitchenProducts from './components/KitchenProducts'
 import Home from './components/pages/Home'
+import Products from './components/pages/Products'
 import About from './components/pages/About'
 import Contact from './components/pages/Contact'
 
@@ -11,15 +11,15 @@ function App() {
   const renderPage = () => {
     switch(currentPage) {
       case 'home':
-        return <Home />
+        return <Home setCurrentPage={setCurrentPage} />
       case 'products':
-        return <KitchenProducts />
+        return <Products />
       case 'about':
         return <About />
       case 'contact':
         return <Contact />
       default:
-        return <Home />
+        return <Home setCurrentPage={setCurrentPage} />
     }
   }
 
